@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  UITabbarController
 //
-//  Created by B Gebretensai on 5/10/21.
+//  Created by BG on 5/10/21.
 //
 
 import UIKit
