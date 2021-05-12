@@ -17,7 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = UIViewController()
+        
+        let homeVC = HomeViewController()
+        let searchVC = SearchViewController()
+        let favoritesVC = FavoritesViewController()
+        
+        // The title and image need to be setup in AppDelegate in order to
+        // load the configuration when the view loads.
+        homeVC.setupTabBar()
+        searchVC.setupTabBar()
+        favoritesVC.setupTabBar()
+        
+        let tabBarController = UITabBarController()
+        UITabBar.appearance().backgroundColor = .systemTeal
+        tabBarController.viewControllers = [homeVC, searchVC, favoritesVC]
+        
+        window?.rootViewController = tabBarController
+        
         return true
     }
 
